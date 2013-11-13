@@ -1,0 +1,50 @@
+modules {
+  module {
+    name = "stack"
+    language = "python"
+
+    param facts_filename {
+    	value = '/etc/xlcloud-facts.json'
+    }
+  }
+}
+
+collection_group {
+  collect_every = 30
+  time_threshold = 600
+
+  metric {
+      name = "stack_id"
+      title = "Stack ID"
+  }
+  metric {
+      name = "layer_id"
+      title = "Layer ID"
+  }
+  metric {
+      name = "logical_resource_id"
+      title = "logical resource id"
+  }
+  metric {
+      name = "stack_name"
+      title = "Tenant UUID"
+  }
+  metric {
+      name = "layer_name"
+      title = "Tenant UUID"
+  }
+  metric {
+      name = "tenant_id"
+      title = "Tenant UUID"
+  }
+  /*
+  metric {
+      name = "arn"
+      title = "ARN of the main stack"
+  }
+  metric {
+      name = "arn_layer"
+      title = "ARN of the nested stack"
+  }
+  */
+}
